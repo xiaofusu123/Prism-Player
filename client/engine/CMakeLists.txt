@@ -26,7 +26,7 @@ if(SRC)
 
     target_link_libraries(${PROJECT_NAME}
     PUBLIC
-        client-adapter
+        $<$<TARGET_EXISTS:client-adapter>:client-adapter>
 
     PRIVATE
         ${FFMPEG_LIBRARIES}

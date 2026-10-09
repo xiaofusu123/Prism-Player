@@ -22,11 +22,11 @@ if(SRC)
 
     target_link_libraries(${PROJECT_NAME}
     PUBLIC
-        common
+        $<$<TARGET_EXISTS:common>:common>
 
     PRIVATE
-        client-av_sync
-        client-network
+        $<$<TARGET_EXISTS:client-av_sync>:client-av_sync>
+        $<$<TARGET_EXISTS:client-network>:client-network>
         spdlog::spdlog
     )
 else()

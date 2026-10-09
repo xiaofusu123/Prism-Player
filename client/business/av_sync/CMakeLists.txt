@@ -22,7 +22,7 @@ if(SRC)
 
     target_link_libraries(${PROJECT_NAME}
     PUBLIC
-        client-engine
+        $<$<TARGET_EXISTS:client-engine>:client-engine>
     
     PRIVATE
         spdlog::spdlog
