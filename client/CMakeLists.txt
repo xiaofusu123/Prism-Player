@@ -13,7 +13,7 @@ add_subdirectory(business)
 add_subdirectory(service)
 
 if(NOT TARGET client-service)
-    message(FATAL_ERROR "The target doesn't exist")
+    message(FATAL_ERROR "The target(client-service) doesn't exist: client/service/src is empty")
 endif()
 
 if(WIN32)
