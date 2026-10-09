@@ -19,5 +19,10 @@ else()
         CXX_VISIBILITY_PRESET hidden
         VISIBILITY_INLINES_HIDDEN ON
     )
-    target_compile_options(${PROJECT_NAME} PRIVATE -fvisibility=hidden)
+
+    if(TARGET Prism-client)
+        target_compile_options(${PROJECT_NAME} PRIVATE -fvisibility=hidden)
+    else()
+        message(WARNING "The target(Prism-client) doesn't exist")
+    endif()
 endif()
